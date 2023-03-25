@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="input_edit_text_s">60dp</dimen>
+    <dimen name="input_edit_text_m">120dp</dimen>
+    <dimen name="input_edit_text_l">240dp</dimen>
+</resources>

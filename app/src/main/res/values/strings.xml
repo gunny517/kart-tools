@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">KartTools</string>
     <string name="label_fragment_speed_calculator">速度計算機</string>
+    <string name="hint_input_drive">ドライブ</string>
+    <string name="hint_input_driven">ドリブン</string>
+    <string name="hint_input_rpm">回転数</string>
+    <string name="hint_input_circumference">タイヤ外周</string>
 </resources>

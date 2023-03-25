@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import jp.ceed.android.kart.karttools.R
 import jp.ceed.android.kart.karttools.databinding.FragmentSpeedCalculatorBinding
 import jp.ceed.android.kart.karttools.viewmodel.SpeedCalculatorFragmentViewModel
 
+@AndroidEntryPoint
 class SpeedCalculatorFragment: Fragment() {
 
     private lateinit var binding: FragmentSpeedCalculatorBinding
@@ -26,6 +28,15 @@ class SpeedCalculatorFragment: Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.onPause()
     }
 
 }

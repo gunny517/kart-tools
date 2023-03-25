@@ -10,12 +10,48 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_width="@dimen/input_edit_text_m"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="@string/hint_input_drive"
+            android:text="@={viewModel.inputDrive}"/>
 
+        <EditText
+            android:layout_width="@dimen/input_edit_text_m"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="@string/hint_input_driven"
+            android:text="@={viewModel.inputDriven}"/>
+
+        <EditText
+            android:layout_width="@dimen/input_edit_text_m"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@{viewModel.finalRatio}"/>
+
+        <EditText
+            android:layout_width="@dimen/input_edit_text_m"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="@string/hint_input_circumference"
+            android:text="@={viewModel.inputCircumference}"/>
+
+        <EditText
+            android:layout_width="@dimen/input_edit_text_m"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="@string/hint_input_rpm"
+            android:text="@={viewModel.inputRpm}"/>
+
+        <EditText
+            android:layout_width="@dimen/input_edit_text_m"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@{viewModel.speed}"/>
     </LinearLayout>
-
 </layout>
