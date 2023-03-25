@@ -14,7 +14,6 @@ android {
     }
 
     defaultConfig {
-        multiDexEnabled true
         applicationId "jp.ceed.android.kart.karttools"
         minSdk 24
         targetSdk 33
