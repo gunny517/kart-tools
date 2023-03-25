@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">KartTools</string>
+    <string name="label_fragment_speed_calculator">速度計算機</string>
+</resources>
