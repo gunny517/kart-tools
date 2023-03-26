@@ -3,6 +3,7 @@ package jp.ceed.android.kart.karttools.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import jp.ceed.android.kart.karttools.extensions.toDisplayValue
 import jp.ceed.android.kart.karttools.repository.InputValueRepository
 import javax.inject.Inject
 
@@ -31,11 +32,16 @@ class SpeedCalculatorFragmentViewModel @Inject constructor(
     private fun setObservers() {
         inputDrive.observeForever {
             calculateFinalRatio()
+            calculateSpeed()
         }
         inputDriven.observeForever {
             calculateFinalRatio()
+            calculateSpeed()
         }
         inputRpm.observeForever {
+            calculateSpeed()
+        }
+        inputCircumference.observeForever {
             calculateSpeed()
         }
     }
@@ -58,7 +64,7 @@ class SpeedCalculatorFragmentViewModel @Inject constructor(
         if(inputDriveValue.isNullOrEmpty() || inputDrivenValue.isNullOrEmpty()) {
             finalRatio.value = ""
         } else {
-            finalRatio.value = (inputDrivenValue.toFloat() / inputDriveValue.toFloat()).toString()
+            finalRatio.value = (inputDrivenValue.toFloat() / inputDriveValue.toFloat()).toDisplayValue()
         }
     }
 
@@ -70,7 +76,7 @@ class SpeedCalculatorFragmentViewModel @Inject constructor(
             speed.value = ""
         } else {
             val rotation: Float = inputRpmValue.toFloat() / finalValue.toFloat()
-            speed.value = ((circumference.toFloat() * rotation * 60f) / 1000000f).toString()
+            speed.value = ((circumference.toFloat() * rotation * 60f) / 1000000f).toDisplayValue()
         }
     }
 
